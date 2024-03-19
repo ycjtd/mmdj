@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/message/message",
+    "pages/publish/publish",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "服务广场",
+    "navigationBarBackgroundColor": "#FBC02D"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#FBC02D",
+    "color": "#8a8a8a",
+    "list":[
+      {
+        "pagePath": "pages/home/home",
+        "text": "广场",
+        "selectedIconPath": "images/tab-bar/square-selected.png",
+        "iconPath": "images/tab-bar/square.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "selectedIconPath": "images/tab-bar/publish-selected.png",
+        "iconPath": "images/tab-bar/publish.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "selectedIconPath": "images/tab-bar/message-selected.png",
+        "iconPath": "images/tab-bar/message.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "selectedIconPath": "images/tab-bar/my-selected.png",
+        "iconPath": "images/tab-bar/my.png"
+      }
+    ]
+  },
+  "usingComponents":{
+     "i-tabs": "/components/tabs/tabs",
+     "i-service-preview": "/components/service-preview/service-preview"
+   },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

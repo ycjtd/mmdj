@@ -1,0 +1,39 @@
+// js
+
+var touchStartX
+
+// 手指滑动开始
+function handleTouchstart(event) {
+  // 数据绑定，记录触摸开始的 X 轴的位置
+  touchStartX = event.changedTouches[0].clientX
+}
+// 手指滑动结束
+function handleTouchend (event,ownerInstance) {
+  var touchEndX = event.changedTouches[0].clientX;
+  // 负数代表手指向左滑动 正数代表手指向右滑动
+  var distance = touchEndX - touchStartX
+
+  // -1：代表后退 0：不动 1：前进
+  var direction = 0
+  // 向左滑动，前进
+  if(distance < 0 && distance < -70){
+    direction = 1
+  }
+  
+  // 向右滑动 后退
+  if(distance > 0 && distance > 70) {
+    direction = -1
+  }
+
+  if(direction !== 0){
+    ownerInstance.callMethod('handleTouchMove',{direction:direction})
+  }
+  // 把结束时的X轴位置-触摸开始时的位置
+  // 做判断 判断是往左划还是往右划
+  // 做数据绑定 改变currentTabIndex的值
+}
+
+module.exports = {
+  handleTouchstart: handleTouchstart,
+  handleTouchend: handleTouchend,
+};
