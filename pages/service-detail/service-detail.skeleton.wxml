@@ -1,0 +1,133 @@
+<!--
+此文件为开发者工具生成，生成时间: 2024/3/21下午10:26:26
+使用方法：
+在 C:\Users\17336\Desktop\project\mmdj\pages\service-detail\service-detail.wxml 引入模板
+
+```
+<import src="service-detail.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 C:\Users\17336\Desktop\project\mmdj\pages\service-detail\service-detail.wxss 中引入样式
+```
+@import "./service-detail.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="inner-container">
+        <view class="service-info">
+          <image class="cover-image sk-image" mode="widthFix" style="height: 375.328px;"></image>
+          <view class="row">
+            <view class="title sk-transparent sk-text-14-2857-946 sk-text">清洗油烟机</view>
+            <view class="category">
+              <view is="components/icon/icon">
+                <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size: 17px;color:#f27013"></view>
+              </view>
+              <view class="tag-text sk-transparent sk-text-14-2857-941 sk-text">保洁</view>
+            </view>
+          </view>
+          <view class="row">
+            <view class="publisher">
+              <view is="components/avatar/avatar">
+                <view class="avatar--container">
+                  <view class="avatar--avatar">
+                    <image class="avatar--avatar-image sk-image" style="width: 30px;height: 30px;border-radius: 50%"></image>
+                  </view>
+                  <view class="avatar--nickname sk-transparent sk-text-14-2857-322 sk-text" style="font-size: 14px">沁塵</view>
+                </view>
+              </view>
+            </view>
+            <view class="score sk-transparent sk-text-14-2857-233 sk-text">★ 4.5</view>
+          </view>
+          <view class="row">
+            <view class="publish-date sk-transparent sk-text-14-2857-524 sk-text">2021-04-29 16:34:38</view>
+          </view>
+          <view class="row row-space-between">
+            <view class="price sk-transparent">
+              <text class="label sk-transparent sk-opacity">￥</text>200.00
+            </view>
+            <view class="sales-volume sk-transparent sk-text-14-2857-915 sk-text">
+              已售 5
+            </view>
+          </view>
+          <view class="row">
+            <view class="description sk-transparent sk-text-14-2857-803 sk-text">专业清晰各类油烟机，让你的油烟机焕然一新！开业酬宾，200/台，节假日同价。</view>
+          </view>
+        </view>
+        <view class="service-rating">
+          <view class="service-rating-title sk-transparent sk-text-14-2857-369 sk-text">历史评价</view>
+          <view class="service-rating-list">
+            <view class="service-rating-item">
+              <view is="components/service-rating/service-rating">
+                <view class="rating--container">
+                  <view class="rating--row">
+                    <view class="rating--author">
+                      <view is="components/avatar/avatar">
+                        <view class="avatar--container">
+                          <view class="avatar--avatar">
+                            <image class="avatar--avatar-image sk-image" style="width: 30px;height: 30px;border-radius: 50%"></image>
+                          </view>
+                          <view class="avatar--nickname sk-transparent sk-text-14-2857-585 sk-text" style="font-size: 14px">🙄</view>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="rating--create-time sk-transparent sk-text-14-2857-724 sk-text">
+                      2021-06-02 21:06:13
+                    </view>
+                  </view>
+                  <view class="rating--score sk-transparent">
+                    评分：
+                    <view is="components/ratings/ratings">
+                      <view class="ratings--container">
+                        <view class="ratings--item">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size: 18px;color:#f3d066"></view>
+                          </view>
+                        </view>
+                        <view class="ratings--item">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size: 18px;color:#f3d066"></view>
+                          </view>
+                        </view>
+                        <view class="ratings--item">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size: 18px;color:#f3d066"></view>
+                          </view>
+                        </view>
+                        <view class="ratings--item">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size: 18px;color:#f3d066"></view>
+                          </view>
+                        </view>
+                        <view class="ratings--item">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size: 18px;color:#888888"></view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="action-bar">
+        <view is="pages/service-detail/components/consumer-action/consumer-action">
+          <view class="action--action-bar-item">
+            <i-button class="sk-transparent sk-text-14-2857-34 sk-text">联系对方</i-button>
+            <i-button class="sk-transparent sk-text-14-2857-934 sk-text">立即预约</i-button>
+          </view>
+        </view>
+        <view is="components/safe-area/safe-area">
+          <view class="area--safe-area-bottom"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

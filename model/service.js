@@ -1,12 +1,10 @@
 import Http from "../utils/http";
+import Base from "./base";
 
 
-class Service {
+class Service extends Base{
 
-  page = 1
-  count = 4
-  data = []
-  hasMoreData = true
+
   /**
    * 分页获取服务列表
    * @param {*} page 页码
@@ -34,13 +32,13 @@ class Service {
     return this.data
   }
 
-  reset(){
-    this.page = 1
-    this.count = 4
-    this.data = []
-    this.hasMoreData = true
-    return this
+  static getServiceById(serviceId){
+    return Http.request({
+      url:`v1/service/${serviceId}`
+    })
   }
+
+
 }
 
 export default Service

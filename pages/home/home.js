@@ -10,16 +10,16 @@ Page({
     categoryList: [],
     serviceList: [],
     tabIndex: 0,
-    categoryId:0,
-    loading:true
+    categoryId: 0,
+    loading: true,
   },
 
   onLoad: async function () {
     await this._getServiceList();
     await this._getCategoryList();
     this.setData({
-      loading:false
-    })
+      loading: false,
+    });
   },
 
   // 获取分类列表
@@ -32,10 +32,9 @@ Page({
 
   // 获取服务列表
   async _getServiceList() {
-    const res = await service.reset().getServiceList(
-      this.data.categoryId,
-      this.data.tabIndex
-    );
+    const res = await service
+      .reset()
+      .getServiceList(this.data.categoryId, this.data.tabIndex);
     this.setData({
       serviceList: res,
     });
@@ -43,19 +42,25 @@ Page({
 
   // 监听子组件点击事件
   handleTabChange: function (event) {
-    console.log("event", event);
     this.data.tabIndex = event.detail.index;
-    this._getServiceList()
+    this._getServiceList();
   },
 
   // 点击滑块
   handleCategoryChange: throttle(function (event) {
-    if(this.data.categoryId === event.currentTarget.dataset.id){
-      return
+    if (this.data.categoryId === event.currentTarget.dataset.id) {
+      return;
     }
     this.data.categoryId = event.currentTarget.dataset.id;
     this._getServiceList();
   }),
+
+  handleSelectService: function (event) {
+    const service = event.currentTarget.dataset.service;
+    wx.navigateTo({
+      url: "/pages/service-detail/service-detail?service_id=" + service.id,
+    });
+  },
 
   // 下拉刷新
   async onPullDownRefresh() {

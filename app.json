@@ -3,20 +3,21 @@
     "pages/home/home",
     "pages/message/message",
     "pages/publish/publish",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/service-detail/service-detail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "慕慕到家",
     "navigationBarBackgroundColor": "#fff",
-    "backgroundColorButtom":"#efefef"
+    "backgroundColorButtom": "#efefef"
   },
   "tabBar": {
     "borderStyle": "white",
     "selectedColor": "#FBC02D",
     "color": "#8a8a8a",
-    "list":[
+    "list": [
       {
         "pagePath": "pages/home/home",
         "text": "广场",
@@ -43,12 +44,16 @@
       }
     ]
   },
-  "usingComponents":{
+  "usingComponents": {
     "i-icon": "/components/icon/icon",
     "i-tabs": "/components/tabs/tabs",
     "i-service-preview": "/components/service-preview/service-preview",
-    "i-show-status": "/components/show-status/show-status"
-   },
+    "i-show-status": "/components/show-status/show-status",
+    "i-avatar": "/components/avatar/avatar",
+    "i-service-rating": "/components/service-rating/service-rating",
+    "i-ratings": "/components/ratings/ratings",
+    "i-safe-area": "/components/safe-area/safe-area"
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
