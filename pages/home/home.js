@@ -1,43 +1,78 @@
 import Service from "../../model/service";
 import Category from "../../model/category";
+import {throttle} from '../../utils/util';
 
 const service = new Service()
 
 Page({
   data: {
     tabs: ["全部服务", "在提供", "正在找"],
-    currentTabIndex: 0,
-    categoryList:[],
-    serviceList:[]
+    categoryList: [],
+    serviceList: [],
+    tabIndex: 0,
+    categoryId:0,
+    loading:true
   },
 
-  onLoad:function(){
-    this._getServiceList()
-    this._getCategoryList()
+  onLoad: async function () {
+    await this._getServiceList();
+    await this._getCategoryList();
+    this.setData({
+      loading:false
+    })
   },
-  
+
   // 获取分类列表
-  async _getCategoryList(){
+  async _getCategoryList() {
     const res = await Category.getCategoryListWithAll();
     this.setData({
-      categoryList:res
+      categoryList: res,
     });
   },
 
   // 获取服务列表
-  async _getServiceList(){
-    const res = await service.getServiceList(1,10)
+  async _getServiceList() {
+    const res = await service.reset().getServiceList(
+      this.data.categoryId,
+      this.data.tabIndex
+    );
     this.setData({
-      serviceList: res.data
+      serviceList: res,
     });
   },
 
   // 监听子组件点击事件
-  handleTabChange:function(event){
+  handleTabChange: function (event) {
+    console.log("event", event);
+    this.data.tabIndex = event.detail.index;
+    this._getServiceList()
   },
 
-  // 点击滑块 
-  handleCategoryChange:function(event){
-    const id = event.currentTarget.dataset.id;
-  }
+  // 点击滑块
+  handleCategoryChange: throttle(function (event) {
+    if(this.data.categoryId === event.currentTarget.dataset.id){
+      return
+    }
+    this.data.categoryId = event.currentTarget.dataset.id;
+    this._getServiceList();
+  }),
+
+  // 下拉刷新
+  async onPullDownRefresh() {
+    this._getCategoryList(this.data.categoryId, this.data.tabIndex);
+    wx.stopPullDownRefresh();
+  },
+
+  // 上拉触底 加载更多
+  async onReachBottom() {
+    // 获取下一页的数据并且和当前数据合并
+    if (!service.hasMoreData) {
+      return;
+    }
+    const serviceList = await service.getServiceList(
+      this.data.categoryId,
+      this.data.tabIndex
+    );
+    this.setData({ serviceList });
+  },
 });

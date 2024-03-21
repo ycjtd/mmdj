@@ -1,3 +1,5 @@
+import {throttle} from '../../utils/util'
+
 // components/tabs/tabs.js
 Component({
   options: {
@@ -27,7 +29,7 @@ Component({
     // 1.传入一个数组，按数组元素内容渲染我们的标签页选项
     // 2.能够监听点击事件，并且通知使用组件的页面或者父组件，通过事件通知我们选择了什么
     // 点击标签页
-    handleTabChange: function (event) {
+    handleTabChange: throttle(function (event) {
       const index = event.currentTarget.dataset.index;
       if(index === this.data.currentTabIndex) return
       this.setData({
@@ -35,7 +37,7 @@ Component({
       });
 
       this.triggerEvent("change", { index });
-    },
+    }),
 
     // 触摸移动屏幕
     handleTouchMove:function (event) {

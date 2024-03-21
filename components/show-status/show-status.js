@@ -1,11 +1,17 @@
-// components/service-preview/service-preview.js
+// components/show-status/show-status.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    service:{
-      type:Object
+    show:{
+      type:Boolean,
+      value:false
+    },
+    content:String,
+    top:{
+      type:String,
+      value:'0'
     }
   },
 

@@ -6,9 +6,11 @@
     "pages/my/my"
   ],
   "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "服务广场",
-    "navigationBarBackgroundColor": "#FBC02D"
+    "navigationBarTitleText": "慕慕到家",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColorButtom":"#efefef"
   },
   "tabBar": {
     "borderStyle": "white",
@@ -42,8 +44,10 @@
     ]
   },
   "usingComponents":{
-     "i-tabs": "/components/tabs/tabs",
-     "i-service-preview": "/components/service-preview/service-preview"
+    "i-icon": "/components/icon/icon",
+    "i-tabs": "/components/tabs/tabs",
+    "i-service-preview": "/components/service-preview/service-preview",
+    "i-show-status": "/components/show-status/show-status"
    },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
