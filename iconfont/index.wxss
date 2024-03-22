@@ -127,10 +127,6 @@
     content: "\e62a";
 }
 
-.icon-tag:before {
-  content: "\e64d";
-}
-
 .icon-xiaoxi:before {
     content: "\e62b";
 }

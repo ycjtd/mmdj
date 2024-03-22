@@ -1,3 +1,4 @@
+/*noinspection CssInvalidFunction*/
 .safe-area-top {
     width: 100%;
     padding-top: constant(safe-area-inset-top); /* 兼容 iOS < 11.2 */

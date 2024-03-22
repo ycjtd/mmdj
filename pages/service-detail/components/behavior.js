@@ -1,7 +1,13 @@
-const behavior = Behavior({
-  properties: {
-    service: Object,
-  },
-});
+/**
+ * @Created by WebStorm
+ * @Author: 沁塵
+ * @Desc:
+ */
 
-export default behavior;
+const behavior = Behavior({
+    properties: {
+        service: Object
+    }
+})
+
+export default behavior

@@ -1,5 +1,7 @@
 {
   "navigationBarBackgroundColor": "#f3d066",
   "navigationBarTitleText": "个人中心",
-  "backgroundColor": "#f3d066"
+  "backgroundColorTop": "#f3d066",
+  "usingComponents": {
+  }
 }

@@ -1,21 +1,25 @@
-<wxs src="../../common/wxs/touchMove.wxs" module="touch"></wxs>
+<wxs src="../../common/wxs/touchmove.wxs" module="touch"></wxs>
 
 <view class="container">
-  <view class="tabs">
-    <view class="tab-item" wx:for="{{tabs}}" wx:key="index" bind:tap="handleTabChange" data-index="{{index}}">
-      <view class="tab-label {{currentTabIndex === index ? 'active-tab':''}}">
-        {{item}}
-      </view>
-      <!-- 逻辑控制-->
-      <view class="divider" wx:if="{{currentTabIndex === index}}"></view>
+    <view class="tabs">
+        <view class="tab-item"
+              wx:for="{{tabs}}"
+              wx:key="index"
+              bind:tap="handleTabChange"
+              data-index="{{index}}">
+            <view class="tab-label {{currentTabIndex === index ? 'active-tab':''}}">
+                {{item}}
+            </view>
+            <!-- 逻辑控制-->
+            <view class="divider" wx:if="{{currentTabIndex === index}}"></view>
+        </view>
     </view>
-  </view>
-  <slot name="extend"></slot>
-  <view class="tab-panel" bind:touchstart="{{touch.handleTouchstart}}" bind:touchend="{{touch.handleTouchend}}">
-    <!--        内容不确定-->
-    <!--        样式不确定-->
-    <!--        插槽  slot-->
-    <slot name="panel"></slot>
-  </view>
+    <slot name="extend"></slot>
+    <view class="tab-panel" bind:touchstart="{{touch.handleTouchstart}}" bind:touchend="{{touch.handleTouchend}}">
+        <!--        内容不确定-->
+        <!--        样式不确定-->
+        <!--        插槽  slot-->
+        <slot name="panel"></slot>
+    </view>
 
 </view>

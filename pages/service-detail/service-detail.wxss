@@ -1,3 +1,5 @@
+@import "./service-detail.skeleton.wxss";
+
 .container {
     font-size: 28rpx;
     box-sizing: border-box;
@@ -111,3 +113,5 @@
     bottom: 0;
     z-index: 2;
 }
+
+
